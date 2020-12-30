@@ -1,9 +1,9 @@
 const request 		= require('request');
 const Discord 		= require('discord.js');
 const discclient	= new Discord.Client();
-const mysql 		  = require('mysql');
-const fs 			    = require('fs');
-var path 			    = require("path");
+const mysql 		= require('mysql');
+const fs 		= require('fs');
+var path 		= require("path");
 
 const server = require('http').createServer();
 
@@ -31,10 +31,10 @@ discclient.on('message', msg => {
 
 	if (command === 'restart') {
 		if(msg.member.roles.cache.some(r=>["Staff","Admin"].includes(r.name))) {
-        msg.reply('restarting ' + args);
-        io.emit('message', args);
+        		msg.reply('restarting ' + args);
+        		io.emit('message', args);
 		} else {
-
+			msg.reply('U NO ADMIN!');
 		}
 	} 
 })
