@@ -18,9 +18,9 @@
 ]
 */
 
-const fs 			= require('fs');
-var path 			= require("path");
-var socket 			= require('socket.io-client')
+const fs 		= require('fs');
+var path 		= require("path");
+var socket 		= require('socket.io-client')
 const { exec } 		= require('child_process');
 
 console.log('Looking for server.json');
@@ -50,11 +50,11 @@ io.on('event', function(data){
 	console.log(data);
 });
 io.on('disconnect', (reason) => {
-  console.log('disconnected');
-  console.log(reason + ". Reconnecting!")
-  if (reason === 'io server disconnect') {
-    io.connect();
-  }
+	console.log('disconnected');
+	console.log(reason + ". Reconnecting!")
+	if (reason === 'io server disconnect') {
+		io.connect();
+	}
 });
 
 var newServerLength = servers.length-1;
